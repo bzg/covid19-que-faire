@@ -87,7 +87,7 @@ tree:
       goto:    "4"
       color:   "is-warning"
     - answer:  "Non"
-      summary: ["Je n'appartiens pas aux catégories qui doivent se faire tester.","**Appelez votre médecin traitant ou un médecin en téléconsultation qui pourra effectuer le diagnostic sur signes cliniques**."]
+      summary: ["Je n'appartiens pas aux catégories qui doivent se faire tester.","**Appelez votre médecin traitant ou un médecin en téléconsultation** qui pourra effectuer le diagnostic sur signes cliniques."]
       explain: "Vous n'appartenez pas aux catégories qui doivent se faire tester.  **Un médecin effectue le diagnostic sur signes cliniques**.  Les tests en ambulatoire sont possibles."
       color:   "is-info"
       goto:    "4"
