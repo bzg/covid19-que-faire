@@ -156,7 +156,7 @@
                     :on-click
                     #(do (when (vector? summary)
                            (reset! show-modal true)
-                           (reset! modal-message (peek summary)))
+                           (reset! modal-message (md-to-string (peek summary))))
                          (reset! hist-to-add
                                  (merge
                                   {:score
