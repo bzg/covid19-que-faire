@@ -1,27 +1,27 @@
 # Default locale for UI strings
-locale: "en"
+locale: "fr"
 
 # Customize UI strings
 ui-strings:
+  attention:            "Attention"
+  ok:                   "Tout de suite"
   # display-help:         "Display help"
   # copy-to-clipboard:    "Copy in the clipboard"
   # mail-to-message:      "Send by email"
   # mail-subject:         "Results"
   # mail-body:            "Hi,\n%s\nThanks."
   # redo:                 "Redo"
-  # ok:                   "Okay"
   # contact-intro:        "Contact: "
   # toggle-summary-style: "Toggle summary style"
-  # attention:            "Attention"
 
 # Allow users to send you emails with the summary?
-mail-to:
+# mail-to: "bzg@bzg.fr"
 
 # Display help along with questions by default?
 display-help: true
 
 # Display score along with the results?
-display-score: true
+display-score: false
 
 init-scores:
   score-1:
@@ -35,76 +35,91 @@ init-scores:
 
 # Website header
 header:
- title:    "Here is my title."
+ title:    "Quel comportement adopter face au Coronavirus ?"
  logo:     ""
- color:    "is-primary" 
- subtitle: "A subtitle here, possibly with _markdown_ formatting."
+ color:    "is-primary"
+ subtitle: "Les contenus de ce site proviennent du site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus)."
 
 # Website footer
 footer:
- text:    "Some text here, possibly with **markdown** formatting."
- contact:  ""
+ text:    "Les contenus de ce site proviennent du site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>Le code source est [disponible ici sous licence libre](https://github.com/bzg/covid19-quel-comportement)."
+ contact:  "bzg@bzg.fr"
 
 # Mandatory configuration option
 tree:
-  - name:       "0"  
-    text:       "A title for the default page"
+  - name:       "0"
+    Text:       "À lire avant de commencer."
     home-page:  true
     force-help: true
     no-summary: true
-    help:       "Some introductory text here."
+    help:       "Les conseils présentés reprennent les consignes officielles lisibles sur le site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>Elles seront mises à jour au fur et à mesure.<br/>**En cas de doute**, référez-vous aux [consignes officielles](https://www.gouvernement.fr/info-coronavirus)."
     choices:
-    - answer: "Start now"
+    - answer: "J'ai bien compris."
       goto:   "1"
       color:  "is-info"
 
   - name:       "1"
-    text:       "Is it the first question?"
-    help:       "Some **help text** here for the first question.  Markdown formatting accepted."
+    text:       "Avez-vous des symptômes liés au Coronavirus (toux, fièvre, difficultés respiratoires) ?"
     start-page: true
     choices:
-    - answer:  "Yes"
-      summary: "Yes, this is the first question."
-      explain: "Some explanation here."
-      score:
-        score-1:
-          value: 1
-      goto:    "2"
+    - answer:  "Non"
       color:   "is-info"
-    - answer:  "No"
-      summary: "No, this is not the first question."
-      color:   "is-warning"
-      goto:    "end"
-
-  - name:    "2"
-    text:    "Is it the second question?"
-    help:    "Some help text here for the second question."
-    choices:
-    - answer:  "Yes"
-      summary: "Yes, this is the second question!"
-      score:
-        score-2:
-          value: 10
+      explain: "Pas de toux, fièvre ou de difficulté respiratoire."
+      summary: "Je n'ai pas de symptômes liés au Coronavirus."
+      goto:    "11"
+    - answer:  "Oui, légers"
+      summary: "J'ai des symptômes légers liés au Coronavirus."
+      explain: "De la toux et de la fièvre."
       goto:    "3"
-      color:   "is-info"
-    - answer:  "No"
-      summary: "No, this is not the second question."
       color:   "is-warning"
+    - answer:  "Oui, graves"
+      summary: ["J'ai des symptômes **graves** liés au Coronavirus.", "[J’appelle le SAMU-Centre 15](tel:15)."]
+      explain: "Des difficultés respiratoires et des signes d’étouffement."
+      color:   "is-danger"
       goto:    "end"
 
-  - name:    "3"
-    text:    "Is it the _third_ question?"
-    help:    "Some help text here for the second question."
+  - name:       "3"
+    text:       "Devez-vous vous faire tester ?"
     choices:
-      - answer:  "Yes"
-        summary: ["Yes, this is the third question...", "This will end soon, I promise."]
-        goto: "end"
-        color: "is-info"
-      - answer:  "No"
-        summary: "No, this is not the third question."
-        color: "is-warning"
-        goto: "end"
+    - answer:  "Oui"
+      summary: "Je dois me faire tester."
+      explain: "Vous êtes **une personne fragile ou à risque**, vous présentez des signes de gravité, vous êtes déjà hospitalisé, vous êtes **un professionnel de santé**, vous êtes une personne fragile en structure collective (EPHAD, handicap)."
+      goto:    "4"
+      color:   "is-warning"
+    - answer:  "Non"
+      summary: "Je n'appartiens pas aux catégories qui doivent se faire tester.  **Un médecin effectue le diagnostic sur signes cliniques**.  Les tests en ambulatoire sont possibles."
+      explain: "Vous n'appartenez pas aux catégories qui doivent se faire tester.  **Un médecin effectue le diagnostic sur signes cliniques**.  Les tests en ambulatoire sont possibles."
+      color:   "is-info"
+      goto:    "4"
+
+  - name:       "4"
+    text:       "Êtes-vous testé ou diagnostiqué cliniquement comme positif ?"
+    choices:
+    - answer:  "Oui"
+      goto:    "end"
+      summary: ["Je reste strictement à domicile, si j’ai un rendez-vous médical indispensable je porte un masque pour m’y rendre. En cas de difficulté respiratoire, [j’appelle le 15](tel:15). Je me fais prescrire un arrêt de travail initial d’une durée de 7 à 14 jours, entre le 6ème et le 8ème jour j’ai un avis médical, à distance, pour faire surveiller mes symptômes. En fonction de mon état je renouvelle cet arrêt pour 7 jours supplémentaires. Mon isolement sera levé 48h après la résolution complète des symptômes.", "Restez strictement à domicile."]
+      color:   "is-info"
+    - answer:  "Non"
+      color:   "is-warning"
+      summary: "Je continue d'appliquer les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades) et je limite mes déplacements au strict nécessaire."
+      goto:    "end"
+
+  - name:       "11"
+    text:       "Avez-vous ou avez-vous eu des contacts étroits avec un cas de COVID19 ?"
+    choices:
+    - answer:  "Oui"
+      color:   "is-danger"
+      summary: ["**Je m’isole à domicile**, je réduis strictement mes sorties sauf pour ravitaillement alimentaire, j’applique les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades), **je prends ma température 2 fois par jour** et j’auto-surveille les symptômes de la maladie, je fais du **télétravail**.", "Restez chez vous."]
+      goto:    "end"
+    - answer:  "Oui, en tant que professionnel de santé"
+      color:   "is-warning"
+      summary: ["Je suis un professionnel de santé.  Si **j'ai été en contact avec une personne malade du COVID-19 en l’absence de mesures de protection appropriées**, je m’auto-surveille en prenant ma température 2 fois par jour, j’applique les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades), je porte un masque sur mon lieu de travail et avec les malades, je contacte un médecin et me fais tester systématiquement en cas d’apparition de symptômes.","Je porte un masque sur mon lieu de travail et avec les malades."]
+      goto:    "end"
+    - answer:  "Non"
+      goto:    "end"
+      summary: "**J’applique les gestes barrières** (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades) et **je réduis mes sorties au strict nécessaire** : travail (si télétravail impossible), courses, médecin."
+      color:   "is-info"
 
   - name: "end"
-    text: "This is the end."
+    text: "Merci de votre vigilance."
     done: true
