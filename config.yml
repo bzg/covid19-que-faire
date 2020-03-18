@@ -73,7 +73,7 @@ tree:
       goto:    "3"
       color:   "is-warning"
     - answer:  "Oui, graves"
-      summary: ["J'ai des symptômes **graves** liés au Coronavirus.", "[J’appelle le SAMU-Centre 15](tel:15)."]
+      summary: ["J'ai des symptômes **graves** liés au Coronavirus.", "[J’appelle le SAMU au 15](tel:15)."]
       explain: "Des difficultés respiratoires et des signes d’étouffement."
       color:   "is-danger"
       goto:    "end"
@@ -97,7 +97,7 @@ tree:
     choices:
     - answer:  "Mon test ou mon diagnostic clinique est **positif**."
       goto:    "end"
-      summary: ["Je reste strictement à domicile, si j’ai un rendez-vous médical indispensable je porte un masque pour m’y rendre. En cas de difficulté respiratoire, [j’appelle le 15](tel:15). Je me fais prescrire un arrêt de travail initial d’une durée de 7 à 14 jours, entre le 6ème et le 8ème jour j’ai un avis médical, à distance, pour faire surveiller mes symptômes. En fonction de mon état je renouvelle cet arrêt pour 7 jours supplémentaires. Mon isolement sera levé 48h après la résolution complète des symptômes.", "Suivez les instructions de votre médecin : **restez strictement à domicile**."]
+      summary: ["Je reste strictement à domicile, si j’ai un rendez-vous médical indispensable je porte un masque pour m’y rendre. En cas de difficulté respiratoire, [j’appelle le SAMU au 15](tel:15). Je me fais prescrire un arrêt de travail initial d’une durée de 7 à 14 jours, entre le 6ème et le 8ème jour j’ai un avis médical, à distance, pour faire surveiller mes symptômes. En fonction de mon état je renouvelle cet arrêt pour 7 jours supplémentaires. Mon isolement sera levé 48h après la résolution complète des symptômes.", "Suivez les instructions de votre médecin : **restez strictement à domicile**."]
       color:   "is-info"
     - answer:  "Mon test ou mon diagnostic clinique est **négatif**."
       color:   "is-warning"
