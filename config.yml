@@ -38,7 +38,7 @@ header:
  title:    "Quel comportement adopter face au Coronavirus ?"
  logo:     ""
  color:    "is-primary"
- subtitle: "Les contenus de ce site proviennent du site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus)."
+ subtitle: "Les contenus de ce site proviennent du site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>**En cas de doute sur la gravité de vos symptômes, appelez votre médecin traitant ou un médecin en téléconsultation.**"
 
 # Website footer
 footer:
