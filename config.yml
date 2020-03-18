@@ -54,7 +54,7 @@ tree:
     no-summary: true
     help:       "Les conseils présentés reprennent les consignes officielles lisibles sur le site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>Elles seront mises à jour au fur et à mesure.<br/>**En cas de doute**, référez-vous aux [consignes officielles](https://www.gouvernement.fr/info-coronavirus)."
     choices:
-    - answer: "J'ai bien compris."
+    - answer: "J'ai bien compris"
       goto:   "1"
       color:  "is-info"
 
@@ -63,17 +63,22 @@ tree:
     start-page: true
     choices:
     - answer:  "Non"
-      color:   "is-info"
+      color:   "is-success"
       explain: "Pas de toux, fièvre ou de difficulté respiratoire."
       summary: "Je n'ai pas de symptômes liés au Coronavirus."
       goto:    "11"
+    - answer:  "Je ne sais pas"
+      summary: ["J'ai l'impression d'avoir des symptômes mais je ne suis pas sûr.","Appelez votre médecin traitant ou un médecin en téléconsultation.  N'appelez le SAMU que si vous êtes sûr d'avoir des symptômes."]
+      explain: "Les symptômes principaux sont la fièvre ou la sensation de fièvre et des signes de difficultés respiratoires de type toux ou essoufflement."
+      goto:    "end"
+      color:   "is-info"
     - answer:  "Oui, légers"
       summary: "J'ai des symptômes légers liés au Coronavirus."
       explain: "De la toux et de la fièvre."
       goto:    "3"
       color:   "is-warning"
     - answer:  "Oui, graves"
-      summary: ["J'ai des symptômes **graves** liés au Coronavirus.", "[J’appelle le SAMU au 15](tel:15)."]
+      summary: ["J'ai des symptômes **graves** liés au Coronavirus.", "**[Appelez le SAMU en composant le 15](tel:15)**."]
       explain: "Des difficultés respiratoires et des signes d’étouffement."
       color:   "is-danger"
       goto:    "end"
