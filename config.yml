@@ -95,11 +95,11 @@ tree:
   - name:       "4"
     text:       "Êtes-vous testé ou diagnostiqué cliniquement comme positif ?"
     choices:
-    - answer:  "Mon test ou mon diagnostic clinique est **positif**."
+    - answer:  "Mon test ou mon diagnostic clinique est **positif**"
       goto:    "end"
       summary: ["Je reste strictement à domicile, si j’ai un rendez-vous médical indispensable je porte un masque pour m’y rendre. En cas de difficulté respiratoire, [j’appelle le SAMU au 15](tel:15). Je me fais prescrire un arrêt de travail initial d’une durée de 7 à 14 jours, entre le 6ème et le 8ème jour j’ai un avis médical, à distance, pour faire surveiller mes symptômes. En fonction de mon état je renouvelle cet arrêt pour 7 jours supplémentaires. Mon isolement sera levé 48h après la résolution complète des symptômes.", "Suivez les instructions de votre médecin : **restez strictement à domicile**."]
       color:   "is-info"
-    - answer:  "Mon test ou mon diagnostic clinique est **négatif**."
+    - answer:  "Mon test ou mon diagnostic clinique est **négatif**"
       color:   "is-warning"
       summary: "Je continue d'appliquer les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades) et je limite mes déplacements au strict nécessaire."
       goto:    "end"
