@@ -99,17 +99,21 @@
         [:div.hero-body
          [:div.container
           [:div.columns
-           [:div.column
-            (when (not-empty (:logo (:header config)))
-              [:figure.media-left
-               [:p.image.is-128x128
-                [:a {:href (rfe/href home-page)}
-                 [:img {:src (:logo (:header config))}]]]])]
-           [:div.column.has-text-right
-            [:h1.title (:title (:header config))]
-            [:br]
-            [:h2.subtitle
-             (md-to-string (:subtitle (:header config)))]]]]]])
+           (let [logo (:logo (:header config))]
+             (when (not-empty logo)
+               [:div.column
+                [:figure.media-left
+                 [:p.image.is-128x128
+                  [:a {:href (rfe/href home-page)}
+                   [:img {:src logo}]]]]])
+             [:div.column
+              {:class (if (not-empty logo)
+                        "has-text-right"
+                        "has-text-centered")}
+              [:h1.title (:title (:header config))]
+              [:br]
+              [:h2.subtitle
+               (md-to-string (:subtitle (:header config)))]])]]]])
      [:div.container
       [:div {:class (str "modal " (when @show-modal "is-active"))}
        [:div.modal-background]
@@ -126,11 +130,11 @@
         {:aria-label "close"
          :on-click   #(reset! show-modal false)}]]
       [:div.section
-       [:h1.title.has-text-centered (md-to-string text)]
-       [:div.level-right
-        (when (or force-help @show-help)
-          [:div.level-item
-           (md-to-string help)])
+       [:div.level
+        [:h1.title.level-item.has-text-centered (md-to-string text)]
+        (when (and (or force-help @show-help)
+                   (not-empty help))
+          [:div.level-item (md-to-string help)])
         (if-not done
           ;; Not done: display the help button
           [:a.level-item.button.is-text
