@@ -113,7 +113,7 @@ tree:
       goto:    "end"
     - answer:  "Oui, en tant que professionnel de santé"
       color:   "is-warning"
-      summary: ["Je suis un professionnel de santé.  Si **j'ai été en contact avec une personne malade du COVID-19 en l’absence de mesures de protection appropriées**, je m’auto-surveille en prenant ma température 2 fois par jour, j’applique les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades), je porte un masque sur mon lieu de travail et avec les malades, je contacte un médecin et me fais tester systématiquement en cas d’apparition de symptômes.","Je porte un masque sur mon lieu de travail et avec les malades."]
+      summary: ["Je suis un professionnel de santé.  Si **j'ai été en contact avec une personne malade du COVID-19 en l’absence de mesures de protection appropriées**, je m’auto-surveille en prenant ma température 2 fois par jour, j’applique les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades), je porte un masque sur mon lieu de travail et avec les malades, je contacte un médecin et me fais tester systématiquement en cas d’apparition de symptômes.","Portez un masque sur votre lieu de travail et avec les malades."]
       goto:    "end"
     - answer:  "Non"
       goto:    "end"
