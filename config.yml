@@ -4,7 +4,7 @@ locale: "fr"
 # Customize UI strings
 ui-strings:
   attention:            "Attention"
-  ok:                   "Tout de suite"
+  ok:                   "J'ai compris"
   # display-help:         "Display help"
   # copy-to-clipboard:    "Copy in the clipboard"
   # mail-to-message:      "Send by email"
@@ -79,15 +79,15 @@ tree:
       goto:    "end"
 
   - name:       "3"
-    text:       "Devez-vous vous faire tester ?"
+    text:       "Faites-vous partie des cas qui doivent se faire tester ?"
     choices:
     - answer:  "Oui"
-      summary: "Je dois me faire tester."
-      explain: "Vous êtes **une personne fragile ou à risque**, vous présentez des signes de gravité, vous êtes déjà hospitalisé, vous êtes **un professionnel de santé**, vous êtes une personne fragile en structure collective (EPHAD, handicap)."
+      summary: ["Je fais partie des cas qui doivent se faire tester.","Appelez votre médecin généraliste."]
+      explain: "Vous êtes **une personne fragile ou à risque**, vous présentez des signes de gravité, vous êtes déjà hospitalisé, vous êtes **un professionnel de santé**, vous êtes une personne fragile en structure collective (EPHAD, handicap).  Vérifiez la liste des personnes à risque sur [le site du gouvernement](https://www.gouvernement.fr/info-coronavirus)."
       goto:    "4"
       color:   "is-warning"
     - answer:  "Non"
-      summary: "Je n'appartiens pas aux catégories qui doivent se faire tester.  **Un médecin effectue le diagnostic sur signes cliniques**.  Les tests en ambulatoire sont possibles."
+      summary: ["Je n'appartiens pas aux catégories qui doivent se faire tester.","**Appelez votre médecin traitant ou un médecin en téléconsultation qui pourra effectuer le diagnostic sur signes cliniques**."]
       explain: "Vous n'appartenez pas aux catégories qui doivent se faire tester.  **Un médecin effectue le diagnostic sur signes cliniques**.  Les tests en ambulatoire sont possibles."
       color:   "is-info"
       goto:    "4"
@@ -95,11 +95,11 @@ tree:
   - name:       "4"
     text:       "Êtes-vous testé ou diagnostiqué cliniquement comme positif ?"
     choices:
-    - answer:  "Oui"
+    - answer:  "Mon test ou mon diagnostic clinique est **positif**."
       goto:    "end"
-      summary: ["Je reste strictement à domicile, si j’ai un rendez-vous médical indispensable je porte un masque pour m’y rendre. En cas de difficulté respiratoire, [j’appelle le 15](tel:15). Je me fais prescrire un arrêt de travail initial d’une durée de 7 à 14 jours, entre le 6ème et le 8ème jour j’ai un avis médical, à distance, pour faire surveiller mes symptômes. En fonction de mon état je renouvelle cet arrêt pour 7 jours supplémentaires. Mon isolement sera levé 48h après la résolution complète des symptômes.", "Restez strictement à domicile."]
+      summary: ["Je reste strictement à domicile, si j’ai un rendez-vous médical indispensable je porte un masque pour m’y rendre. En cas de difficulté respiratoire, [j’appelle le 15](tel:15). Je me fais prescrire un arrêt de travail initial d’une durée de 7 à 14 jours, entre le 6ème et le 8ème jour j’ai un avis médical, à distance, pour faire surveiller mes symptômes. En fonction de mon état je renouvelle cet arrêt pour 7 jours supplémentaires. Mon isolement sera levé 48h après la résolution complète des symptômes.", "Suivez les instructions de votre médecin : **restez strictement à domicile**."]
       color:   "is-info"
-    - answer:  "Non"
+    - answer:  "Mon test ou mon diagnostic clinique est **négatif**."
       color:   "is-warning"
       summary: "Je continue d'appliquer les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades) et je limite mes déplacements au strict nécessaire."
       goto:    "end"
