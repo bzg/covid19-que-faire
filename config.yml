@@ -59,7 +59,7 @@ tree:
       color:  "is-info"
 
   - name:       "1"
-    text:       "Avez-vous des symptômes liés au Coronavirus (toux, fièvre, difficultés respiratoires) ?"
+    text:       "Avez-vous des symptômes liés au Coronavirus ?"
     start-page: true
     choices:
     - answer:  "Non"
