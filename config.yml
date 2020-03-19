@@ -5,13 +5,13 @@ locale: "fr"
 ui-strings:
   attention:            "Attention"
   ok:                   "J'ai compris"
+  contact-intro:        "Corrections et améliorations : "
   # display-help:         "Display help"
   # copy-to-clipboard:    "Copy in the clipboard"
   # mail-to-message:      "Send by email"
   # mail-subject:         "Results"
   # mail-body:            "Hi,\n%s\nThanks."
   # redo:                 "Redo"
-  # contact-intro:        "Contact: "
   # toggle-summary-style: "Toggle summary style"
 
 # Allow users to send you emails with the summary?
@@ -38,12 +38,12 @@ header:
  title:    "Quel comportement adopter face au Coronavirus ?"
  logo:     ""
  color:    "is-primary"
- subtitle: "Les contenus de ce site proviennent du site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>**En cas de doute sur la gravité de vos symptômes, appelez votre médecin traitant ou un médecin en téléconsultation.**"
+ subtitle: "Ce site est une initiative **personnelle**.<br/>**En cas de doute sur la gravité de vos symptômes, appelez votre médecin traitant ou un médecin en téléconsultation.**"
 
 # Website footer
 footer:
- text:    "Les contenus de ce site proviennent du site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>Le code source est [disponible ici sous licence libre](https://github.com/bzg/covid19-quel-comportement)."
- contact:  "bzg@bzg.fr"
+ text:    "Les contenus de ce site proviennent du site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>**Aucune donnée personnelle n'est collectée.**<br/>Le code source est [disponible ici sous licence libre](https://github.com/bzg/covid19-quel-comportement)."
+ contact:  "bzg+covid19@bzg.fr"
 
 # Mandatory configuration option
 tree:
@@ -52,7 +52,7 @@ tree:
     home-page:  true
     force-help: true
     no-summary: true
-    help:       "Les conseils présentés reprennent les consignes officielles lisibles sur le site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>Elles seront mises à jour au fur et à mesure.<br/>**En cas de doute**, référez-vous aux [consignes officielles](https://www.gouvernement.fr/info-coronavirus)."
+    help:       "Tous les conseils présentés ici reprennent les consignes officielles lisibles sur le site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>**En cas de doute**, référez-vous aux [consignes officielles](https://www.gouvernement.fr/info-coronavirus)."
     choices:
     - answer: "J'ai bien compris"
       goto:   "1"
