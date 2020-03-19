@@ -68,7 +68,7 @@ tree:
       summary: "Je n'ai pas de symptômes liés au Coronavirus."
       goto:    "11"
     - answer:  "Je ne sais pas"
-      summary: ["J'ai l'impression d'avoir des symptômes mais je ne suis pas sûr.","Appelez votre médecin traitant ou un médecin en téléconsultation.  N'appelez le SAMU que si vous êtes sûr d'avoir des symptômes."]
+      summary: ["J'ai l'impression d'avoir des symptômes mais je n'en ai pas la certitude.","Appelez votre médecin traitant ou un médecin en téléconsultation. N'appelez le SAMU que si vous êtes sûr d'avoir des symptômes."]
       explain: "Les symptômes principaux sont la fièvre ou la sensation de fièvre et des signes de difficultés respiratoires de type toux ou essoufflement."
       goto:    "end"
       color:   "is-info"
@@ -88,7 +88,7 @@ tree:
     choices:
     - answer:  "Oui"
       summary: ["Je fais partie des cas qui doivent se faire tester.","Appelez votre médecin généraliste."]
-      explain: "Vous êtes **une personne fragile ou à risque**, vous présentez des signes de gravité, vous êtes déjà hospitalisé, vous êtes **un professionnel de santé**, vous êtes une personne fragile en structure collective (EPHAD, handicap).  Vérifiez la liste des personnes à risque sur [le site du gouvernement](https://www.gouvernement.fr/info-coronavirus)."
+      explain: "Vous êtes **une personne fragile ou à risque**, vous présentez des signes de gravité, vous êtes déjà à l'hôpital, vous exercez **une profession de santé**, vous êtes une personne fragile en structure collective (EPHAD, handicap).  Vérifiez la liste des personnes à risque sur [le site du gouvernement](https://www.gouvernement.fr/info-coronavirus)."
       goto:    "4"
       color:   "is-warning"
     - answer:  "Non"
@@ -98,7 +98,7 @@ tree:
       goto:    "4"
 
   - name:       "4"
-    text:       "Êtes-vous testé ou diagnostiqué cliniquement comme positif ?"
+    text:       "Quel est le résultat de votre test ou diagnostic clinique ?"
     choices:
     - answer:  "Mon test ou mon diagnostic clinique est **positif**"
       goto:    "end"
@@ -116,9 +116,9 @@ tree:
       color:   "is-danger"
       summary: ["**Je m’isole à domicile**, je réduis strictement mes sorties sauf pour ravitaillement alimentaire, j’applique les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades), **je prends ma température 2 fois par jour** et j’auto-surveille les symptômes de la maladie, je fais du **télétravail**.", "Restez chez vous."]
       goto:    "end"
-    - answer:  "Oui, en tant que professionnel de santé"
+    - answer:  "Oui, en tant que personne exerçant une profession de santé"
       color:   "is-warning"
-      summary: ["Je suis un professionnel de santé.  Si **j'ai été en contact avec une personne malade du COVID-19 en l’absence de mesures de protection appropriées**, je m’auto-surveille en prenant ma température 2 fois par jour, j’applique les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades), je porte un masque sur mon lieu de travail et avec les malades, je contacte un médecin et me fais tester systématiquement en cas d’apparition de symptômes.","Portez un masque sur votre lieu de travail et avec les malades."]
+      summary: ["J'exerce une profession de santé.  Si **j'ai été en contact avec une personne malade du COVID-19 en l’absence de mesures de protection appropriées**, je m’auto-surveille en prenant ma température 2 fois par jour, j’applique les gestes barrières (je me lave les mains très régulièrement, je tousse et j’éternue dans mon coude, j’utilise des mouchoirs à usage unique, je salue sans serrer la main et j’évite les embrassades), je porte un masque sur mon lieu de travail et avec les malades, je contacte un médecin et me fais tester systématiquement en cas d’apparition de symptômes.","Portez un masque sur votre lieu de travail et avec les malades."]
       goto:    "end"
     - answer:  "Non"
       goto:    "end"
