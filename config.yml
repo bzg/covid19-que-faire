@@ -38,7 +38,7 @@ header:
  title:    "Quel comportement adopter face au Coronavirus ?"
  logo:     ""
  color:    "is-primary"
- subtitle: "Ce site est une initiative **personnelle**.<br/>**En cas de doute sur la gravité de vos symptômes, appelez votre médecin traitant ou un médecin en téléconsultation.**"
+ subtitle: "Ce site est une initiative **personnelle et expérimentale**.<br/>**En cas de doute sur la gravité de vos symptômes, appelez votre médecin traitant ou un médecin en téléconsultation.**"
 
 # Website footer
 footer:
@@ -54,7 +54,7 @@ tree:
     no-summary: true
     help:       "Tous les conseils présentés ici reprennent les consignes officielles lisibles sur le site [www.gouvernement.fr](https://www.gouvernement.fr/info-coronavirus).<br/>**En cas de doute**, référez-vous aux [consignes officielles](https://www.gouvernement.fr/info-coronavirus)."
     choices:
-    - answer: "J'ai bien compris"
+    - answer: "Ce site est obsolète : j'ai bien compris"
       goto:   "1"
       color:  "is-info"
 
